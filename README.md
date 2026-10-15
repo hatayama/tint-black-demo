@@ -4,6 +4,8 @@
 
 An interactive browser demo that compares Multiply, Tint Black (two-color tint) and Gradient Map on the same image.
 
+**Demo:** https://hatayama.github.io/tint-black-demo/
+
 ## 計算式 / Formulas
 
 | 効果 / Effect | 出力 / Output |
@@ -35,3 +37,7 @@ node --test
 
 `assets/` の画像はこのデモのためにプログラムで生成したものです。
 The images in `assets/` were generated programmatically for this demo.
+
+## ライセンス / License
+
+[MIT](LICENSE)
