@@ -156,7 +156,16 @@ function applyPreset(preset) {
   for (const button of $('preset-buttons').children) {
     button.setAttribute('aria-pressed', String(button.dataset.presetId === preset.id));
   }
+  showPresetNote(preset.id);
   requestRender();
+}
+
+// 手で値を変えたあとも、最後に選んだプリセットの意図は読めるよう説明は残す
+function showPresetNote(presetId) {
+  const note = $('preset-note');
+  note.dataset.i18n = `presetNote.${presetId}`;
+  note.textContent = t(state.lang, note.dataset.i18n);
+  note.hidden = false;
 }
 
 function onManualChange() {

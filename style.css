@@ -154,6 +154,15 @@ button.small {
   color: var(--muted);
 }
 
+.preset-note {
+  margin: 12px 0 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--accent);
+  background: var(--surface-2);
+  border-radius: 0 6px 6px 0;
+  font-size: 0.9rem;
+}
+
 .panels {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

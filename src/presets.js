@@ -15,6 +15,7 @@ const PURPLE = '#9940f2';
 const CREAM = '#fff2bf';
 const WHITE = '#ffffff';
 const RED = '#cc0000';
+const FILL = '#ff8a1f';
 
 const DEFAULT_LEVELS = Object.freeze({ inBlack: 0, inWhite: 1, gamma: 1 });
 
@@ -52,12 +53,12 @@ export const PRESETS = Object.freeze([
     gradient: { mode: 'fixed', stops: [{ time: 0.55, color: PURPLE }, { time: 0.8, color: ORANGE }, { time: 1, color: CREAM }] },
   },
   {
-    id: 'whiteFlash',
+    id: 'solidFill',
     image: 'slime',
-    light: WHITE,
-    dark: WHITE,
+    light: FILL,
+    dark: FILL,
     levels: DEFAULT_LEVELS,
-    gradient: { mode: 'blend', stops: [{ time: 0, color: WHITE }, { time: 1, color: WHITE }] },
+    gradient: { mode: 'blend', stops: [{ time: 0, color: FILL }, { time: 1, color: FILL }] },
   },
   {
     id: 'damage',
