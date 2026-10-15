@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Tint Black / Gradient Map</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23f21abf'/%3E%3Ccircle cx='8' cy='8' r='4.5' fill='%238cd9ff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <h1 data-i18n="title">Tint Black とグラデーションマップ</h1>
+      <p class="lead" data-i18n="lead"></p>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" id="lang-ja">日本語</button>
+      <button type="button" id="lang-en">English</button>
+    </div>
+  </header>
+
+  <p id="error" class="error" data-i18n="webglError" hidden></p>
+
+  <section class="controls">
+    <div class="control-group">
+      <h2 data-i18n="imageHeading"></h2>
+      <div id="image-buttons" class="button-row"></div>
+      <label class="upload">
+        <input type="file" id="upload" accept="image/*">
+        <span class="upload-button" data-i18n="upload"></span>
+      </label>
+      <p class="note" data-i18n="uploadNote"></p>
+    </div>
+    <div class="control-group">
+      <h2 data-i18n="presetHeading"></h2>
+      <div id="preset-buttons" class="button-row"></div>
+    </div>
+  </section>
+
+  <main class="panels">
+    <article class="panel">
+      <h2 data-i18n="panel.original"></h2>
+      <p class="caption" data-i18n="caption.original"></p>
+      <div class="canvas-wrap"><canvas id="canvas-original"></canvas></div>
+    </article>
+
+    <article class="panel">
+      <h2 data-i18n="panel.multiply"></h2>
+      <p class="caption" data-i18n="caption.multiply"></p>
+      <div class="canvas-wrap"><canvas id="canvas-multiply"></canvas></div>
+      <div class="params">
+        <label class="color-field"><input type="color" id="mul-light"><span data-i18n="light"></span></label>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h2 data-i18n="panel.tintBlack"></h2>
+      <p class="caption" data-i18n="caption.tintBlack"></p>
+      <div class="canvas-wrap"><canvas id="canvas-tintBlack"></canvas></div>
+      <div class="params">
+        <div class="color-row">
+          <label class="color-field"><input type="color" id="tb-dark"><span data-i18n="dark"></span></label>
+          <label class="color-field"><input type="color" id="tb-light"><span data-i18n="light"></span></label>
+        </div>
+        <h3 data-i18n="levelsHeading"></h3>
+        <label class="slider"><span data-i18n="inBlack"></span><input type="range" id="inBlack" min="0" max="1" step="0.01"><output id="inBlack-value"></output></label>
+        <label class="slider"><span data-i18n="inWhite"></span><input type="range" id="inWhite" min="0" max="1" step="0.01"><output id="inWhite-value"></output></label>
+        <label class="slider"><span data-i18n="gamma"></span><input type="range" id="gamma" min="0.1" max="5" step="0.01"><output id="gamma-value"></output></label>
+        <button type="button" id="reset-levels" class="small" data-i18n="resetLevels"></button>
+      </div>
+    </article>
+
+    <article class="panel">
+      <h2 data-i18n="panel.gradientMap"></h2>
+      <p class="caption" data-i18n="caption.gradientMap"></p>
+      <div class="canvas-wrap"><canvas id="canvas-gradientMap"></canvas></div>
+      <div class="params">
+        <canvas id="gradient-preview" class="gradient-preview"></canvas>
+        <div class="mode-row" role="radiogroup">
+          <label><input type="radio" name="mode" id="mode-blend"><span data-i18n="mode.blend"></span></label>
+          <label><input type="radio" name="mode" id="mode-fixed"><span data-i18n="mode.fixed"></span></label>
+        </div>
+        <ol id="stops" class="stops"></ol>
+        <button type="button" id="add-stop" class="small" data-i18n="addStop"></button>
+      </div>
+    </article>
+  </main>
+
+  <section class="explain">
+    <h2 data-i18n="explainHeading"></h2>
+    <div class="cards">
+      <div class="card"><h3 data-i18n="explain.multiply.title"></h3><p data-i18n="explain.multiply.body"></p></div>
+      <div class="card"><h3 data-i18n="explain.tintBlack.title"></h3><p data-i18n="explain.tintBlack.body"></p></div>
+      <div class="card"><h3 data-i18n="explain.levels.title"></h3><p data-i18n="explain.levels.body"></p></div>
+      <div class="card"><h3 data-i18n="explain.gradientMap.title"></h3><p data-i18n="explain.gradientMap.body"></p></div>
+      <div class="card"><h3 data-i18n="explain.fixed.title"></h3><p data-i18n="explain.fixed.body"></p></div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p data-i18n="footerImages"></p>
+    <p><a data-spine-link href="#" target="_blank" rel="noopener" data-i18n="footerSpine"></a></p>
+  </footer>
+</body>
+</html>
